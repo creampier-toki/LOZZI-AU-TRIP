@@ -14,7 +14,7 @@
         
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f0f9ff; /* Very light blue */
+            background-color: #f0f9ff;
             background-image: radial-gradient(#bae6fd 1.5px, transparent 1.5px);
             background-size: 24px 24px;
             -webkit-tap-highlight-color: transparent;
@@ -46,7 +46,7 @@
 
         /* 交通指引框 */
         .transport-box {
-            background-color: #FEF9C3; /* Yellow-100 */
+            background-color: #FEF9C3;
             border: 2px dashed #EAB308;
             border-radius: 12px;
             color: #854D0E;
@@ -132,13 +132,10 @@
         // 輔助功能：生成 Google Maps 連結
         const getMapLink = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
         
-        // 輔助功能：金額顯示 (修正邏輯)
+        // 輔助功能：金額顯示
         const formatMoney = (text) => {
             if (!text) return "";
-            // 使用正則表達式尋找 $ 符號後面的數字 (避免抓到 "2景點" 的 2)
             const match = text.match(/\$(\d+)/);
-            
-            // 將原本的 $ 符號替換為 AUD $
             let displayText = text.replace('$', 'AUD $');
 
             if (match) {
@@ -458,32 +455,6 @@
                 "Date": "01/04 (六)",
                 "ShortDate": "04",
                 "Month": "JAN",
-                "Location": "丹頓農",
-                "Focus": "湯瑪士小火車 🚂",
-                "Phase": "墨爾本 (待訂)",
-                "Weather": "19°C 🌧",
-                "Transport": {
-                    "Method": "火車 Belgrave 線",
-                    "Detail": "Flinders St Station → Belgrave 站 (1小時)。"
-                },
-                "Activities": ["Puffing Billy 蒸汽火車", "體驗腳掛在窗外", "Grazeland 餐車樂園"],
-                "Logistics": "火車票要先搶！記得不要穿淺色褲子(會黑)。",
-                "Food": {
-                    "Lunch": [
-                        { "Name": "The General Food Store", "Option": "A", "Rating": "4.7", "MustEat": "酪梨吐司", "Link": getMapLink("The General Food Store Emerald") },
-                        { "Name": "Emerald Bakery", "Option": "B", "Rating": "4.4", "MustEat": "澳洲肉派", "Link": getMapLink("Emerald Bakery") }
-                    ],
-                    "Dinner": [
-                        { "Name": "Grazeland", "Option": "A", "Rating": "4.6", "MustEat": "各國小吃市集", "Link": getMapLink("Grazeland Melbourne") },
-                        { "Name": "Grill'd Burgers", "Option": "B", "Rating": "4.3", "MustEat": "健康漢堡", "Link": getMapLink("Grill'd Melbourne Central") }
-                    ]
-                },
-                "Tickets": "火車: 成人$64"
-            },
-            {
-                "Date": "01/05 (日)",
-                "ShortDate": "05",
-                "Month": "JAN",
                 "Location": "墨爾本市區",
                 "Focus": "樂高樂園 🧱",
                 "Phase": "墨爾本 (待訂)",
@@ -505,6 +476,32 @@
                     ]
                 },
                 "Tickets": "LEGOLAND: 成人$36"
+            },
+            {
+                "Date": "01/05 (日)",
+                "ShortDate": "05",
+                "Month": "JAN",
+                "Location": "丹頓農 (Klook團)",
+                "Focus": "湯瑪士小火車 🚂",
+                "Phase": "墨爾本 (待訂)",
+                "Weather": "19°C 🌧",
+                "Transport": {
+                    "Method": "Klook 巴士接送",
+                    "Detail": "<b>⚠️ 集合時間：11:00</b><br>地點：君悅酒店鷹雕像前 (42 Russell St)<br>訂單：<span class='text-red-500 font-bold'>NSK439895</span>"
+                },
+                "Activities": ["Puffing Billy 蒸汽火車", "體驗腳掛在窗外", "Grazeland 餐車樂園"],
+                "Logistics": "今天跟團比較輕鬆！記得準時到集合點。",
+                "Food": {
+                    "Lunch": [
+                        { "Name": "The General Food Store", "Option": "A", "Rating": "4.7", "MustEat": "酪梨吐司", "Link": getMapLink("The General Food Store Emerald") },
+                        { "Name": "Emerald Bakery", "Option": "B", "Rating": "4.4", "MustEat": "澳洲肉派", "Link": getMapLink("Emerald Bakery") }
+                    ],
+                    "Dinner": [
+                        { "Name": "Grazeland", "Option": "A", "Rating": "4.6", "MustEat": "各國小吃市集", "Link": getMapLink("Grazeland Melbourne") },
+                        { "Name": "Grill'd Burgers", "Option": "B", "Rating": "4.3", "MustEat": "健康漢堡", "Link": getMapLink("Grill'd Melbourne Central") }
+                    ]
+                },
+                "Tickets": "火車: 成人$64"
             },
             {
                 "Date": "01/06 (一)",
