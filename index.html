@@ -274,24 +274,24 @@
                 "Date": "12/28 (六)",
                 "ShortDate": "28",
                 "Month": "DEC",
-                "Location": "邦代海灘",
-                "Focus": "玩沙玩水 🏖️",
+                "Location": "邦代 / Double Bay",
+                "Focus": "玩沙 & 大餐 🏖️",
                 "Phase": "雪梨 (Turrella)",
                 "Weather": "28°C ☀",
                 "Transport": {
-                    "Method": "火車 + 公車",
-                    "Detail": "Turrella → Town Hall (轉 T4 線) → Bondi Junction。轉公車 333 直達海灘。"
+                    "Method": "火車 + 渡輪/Uber",
+                    "Detail": "早上先去邦代。下午搭 Uber 或公車去 Double Bay 吃飯 (Margaret)。"
                 },
-                "Activities": ["Bondi Beach 玩沙", "Icebergs 泳池拍照", "吃冰淇淋"],
-                "Logistics": "帶防曬、帽子、玩沙工具！",
+                "Activities": ["Bondi Beach 玩沙", "前往 Margaret 餐廳", "Double Bay 散步"],
+                "Logistics": "餐廳預約 14:45，記得預留交通時間前往 Double Bay。",
                 "Food": {
                     "Lunch": [
-                        { "Name": "Bondi Trattoria", "Option": "A", "Rating": "4.4", "MustEat": "義大利麵/披薩", "Link": getMapLink("Bondi Trattoria") },
-                        { "Name": "Fishmongers Bondi", "Option": "B", "Rating": "4.3", "MustEat": "炸魚薯條盒", "Link": getMapLink("Fishmongers Bondi") }
+                        { "Name": "Margaret (Double Bay)", "Option": "A", "Rating": "4.8", "MustEat": "海鮮料理 (已預約)", "Link": getMapLink("Margaret Double Bay"), "Desc": "<b>14:45 (6人)</b><br>預約代號: <span class='text-red-500 font-bold'>#L6JE43HG5K8</span>" },
+                        { "Name": "Fishmongers Bondi", "Option": "B", "Rating": "4.3", "MustEat": "如果餓了先吃點小東西", "Link": getMapLink("Fishmongers Bondi") }
                     ],
                     "Dinner": [
-                        { "Name": "Icebergs Dining Room", "Option": "A", "Rating": "4.6", "MustEat": "景觀餐廳(需訂位)", "Link": getMapLink("Icebergs Dining Room and Bar") },
-                        { "Name": "Betty's Burgers", "Option": "B", "Rating": "4.5", "MustEat": "經典漢堡/奶昔", "Link": getMapLink("Betty's Burgers Bondi") }
+                        { "Name": "Icebergs Dining Room", "Option": "A", "Rating": "4.6", "MustEat": "景觀餐廳", "Link": getMapLink("Icebergs Dining Room and Bar") },
+                        { "Name": "輕食/優格", "Option": "B", "Desc": "中午吃大餐，晚上簡單吃", "Link": "" }
                     ]
                 },
                 "Tickets": "泳池參觀: 成人$10"
@@ -679,7 +679,7 @@
                                             <div class="font-bold text-slate-700 text-sm truncate pr-1">${item.Name}</div>
                                             ${item.Rating ? `<div class="text-[10px] bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded-full font-bold flex-shrink-0">★ ${item.Rating}</div>` : ''}
                                         </div>
-                                        ${item.MustEat ? `<div class="text-xs text-rose-500 font-medium truncate"><i class="fa-solid fa-heart text-[10px] mr-1"></i>${item.MustEat}</div>` : `<div class="text-xs text-gray-400">${item.Desc || ''}</div>`}
+                                        ${item.MustEat ? `<div class="text-xs text-rose-500 font-medium truncate"><i class="fa-solid fa-heart text-[10px] mr-1"></i>${item.MustEat}</div>` : `<div class="text-xs text-gray-400 leading-tight">${item.Desc || ''}</div>`}
                                     </div>
                                     ${item.Link ? `
                                         <a href="${item.Link}" target="_blank" class="map-btn w-9 h-9 flex items-center justify-center flex-shrink-0 hover:bg-sky-500 hover:text-white transition-colors border border-sky-200 shadow-sm">
@@ -774,5 +774,3 @@
     </script>
 </body>
 </html>
-
-
